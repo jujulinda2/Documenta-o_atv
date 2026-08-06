@@ -181,3 +181,4 @@ Com base na contextualização e no desafio apresentados, segue uma lista de **R
 
 Esses requisitos cobrem todas as funcionalidades descritas no enunciado e servem como base para a documentação de requisitos de um sistema de gerenciamento de equipamentos para locação.
 
+<img width="628" height="711" alt="Captura de tela 2026-08-06 103726" src="https://github.com/user-attachments/assets/07aace77-1f0e-4135-b3ef-6a95df150efb" />
