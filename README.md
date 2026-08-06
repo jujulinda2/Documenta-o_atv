@@ -182,3 +182,159 @@ Com base na contextualização e no desafio apresentados, segue uma lista de **R
 Esses requisitos cobrem todas as funcionalidades descritas no enunciado e servem como base para a documentação de requisitos de um sistema de gerenciamento de equipamentos para locação.
 
 <img width="628" height="711" alt="Captura de tela 2026-08-06 103726" src="https://github.com/user-attachments/assets/07aace77-1f0e-4135-b3ef-6a95df150efb" />
+
+
+A identificação das **entidades** e **atributos** vem da análise do enunciado. Uma técnica simples é:
+
+* **Substantivos importantes → Entidades**
+* **Características desses substantivos → Atributos**
+* **Ações (verbos) → Relacionamentos ou funcionalidades**
+
+Vamos aplicar isso ao seu texto.
+
+---
+
+### 1. Equipamento (Entidade)
+
+O enunciado fala o tempo todo de **equipamentos**:
+
+> "locação de equipamentos"
+
+> "cadastro de equipamentos"
+
+> "consulta dos equipamentos"
+
+Isso indica que **Equipamento** é uma entidade.
+
+Os atributos aparecem logo depois:
+
+> "Marca, Modelo, Categoria, Potência, Material, Peso, Dimensões, Cor e Quantidade disponível."
+
+Então a entidade fica:
+
+```text
+Equipamento
+------------
+idEquipamento
+nome
+marca
+modelo
+quantidade
+estoqueMinimo
+idCategoria
+```
+
+---
+
+### 2. Categoria (Entidade)
+
+O enunciado diz:
+
+> "Cada equipamento possui... Categoria"
+
+Como vários equipamentos podem pertencer à mesma categoria (por exemplo, vários projetores), é melhor criar uma entidade separada.
+
+```text
+Categoria
+------------
+idCategoria
+nome
+```
+
+Relacionamento:
+
+```text
+Categoria 1 ---- N Equipamento
+```
+
+---
+
+### 3. Usuário (Entidade)
+
+O texto diz:
+
+> "Toda movimentação deverá registrar usuário responsável."
+
+Se o sistema precisa registrar quem fez a movimentação, existe uma entidade **Usuário**.
+
+```text
+Usuario
+------------
+idUsuario
+nome
+login
+senha
+```
+
+---
+
+### 4. Movimentação (Entidade)
+
+O enunciado diz:
+
+> "Toda movimentação (entrada de novos equipamentos ou saída para locações)..."
+
+Como cada movimentação possui dados próprios (data, tipo, quantidade, usuário), ela também é uma entidade.
+
+Atributos retirados diretamente do texto:
+
+```text
+Movimentacao
+----------------
+idMovimentacao
+tipo
+data
+quantidade
+idEquipamento
+idUsuario
+```
+
+---
+
+## Como diferenciar entidade e atributo?
+
+Faça esta pergunta:
+
+> **Esse elemento pode existir sozinho e ter vários registros?**
+
+Se sim, provavelmente é uma **entidade**.
+
+Exemplos:
+
+✔ Equipamento → existem vários.
+
+✔ Usuário → existem vários.
+
+✔ Categoria → existem várias.
+
+✔ Movimentação → existem várias.
+
+Agora:
+
+> **Essa informação serve apenas para descrever uma entidade?**
+
+Se sim, é um **atributo**.
+
+Por exemplo:
+
+* marca → descreve um equipamento.
+* modelo → descreve um equipamento.
+* cor → descreve um equipamento.
+* quantidade → descreve um equipamento.
+* data → descreve uma movimentação.
+
+---
+
+### Resumo da análise
+
+| Trecho do enunciado               | Resultado                     |
+| --------------------------------- | ----------------------------- |
+| Equipamentos                      | Entidade **Equipamento**      |
+| Marca, Modelo, Cor, Quantidade... | Atributos de **Equipamento**  |
+| Categoria                         | Entidade **Categoria**        |
+| Usuário responsável               | Entidade **Usuário**          |
+| Movimentação                      | Entidade **Movimentação**     |
+| Data, Tipo, Quantidade            | Atributos de **Movimentação** |
+
+Foi seguindo essa análise do texto que cheguei às quatro entidades do DER. Elas são suficientes para atender aos requisitos descritos no enunciado sem adicionar complexidade desnecessária.
+
