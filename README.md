@@ -359,3 +359,6 @@ insert into usuario (nome, login, senha) values ('julia', 'juliademachado@', '12
 
 insert into Movimentacao (tipo, data, quantidade, equipamento_id, usuario_id) values('Entrada','2024-08-01', '12', 1, 1), ('Saída','2025-07-02','13', 2, 2), ('Saída', '2026-06-03','14', 3, 3);
 
+
+<img width="1012" height="700" alt="Captura de tela 2026-08-06 113958" src="https://github.com/user-attachments/assets/1a44110e-8938-44db-8356-99168b356951" />
+
