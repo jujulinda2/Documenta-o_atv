@@ -349,6 +349,12 @@ senha varchar(8) not null
 
 create type tipo_enum as enum('Entrada', 'Saída');
 
+
+
+
+
+
+
 create table Movimentacao(
 id serial primary key,
 tipo tipo_enum not null,
@@ -405,4 +411,8 @@ VALUES
 
 
 <img width="1012" height="700" alt="Captura de tela 2026-08-06 113958" src="https://github.com/user-attachments/assets/1a44110e-8938-44db-8356-99168b356951" />
+
+
+<img width="232" height="772" alt="Captura de tela 2026-08-27 085407" src="https://github.com/user-attachments/assets/8d9f53ab-ee30-4f69-951d-7238ead6aaff" />
+
 
