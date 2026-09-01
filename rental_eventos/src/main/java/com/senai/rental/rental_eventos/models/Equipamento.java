@@ -33,8 +33,6 @@ public class Equipamento {
     @Column(name = "estoqueMinimo")
     private Integer estoqueMinimo;
 
-    @Column(name = "categoria_id")
-    private Integer categoria_id;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
@@ -43,16 +41,14 @@ public class Equipamento {
     public Equipamento() {
     }
 
-    public Equipamento(Integer id, String nome, String marca, String modelo, Integer quantidade, Integer estoqueMinimo,
-            Integer categoria_id, Categoria categoria) {
+    public Equipamento(Categoria categoria, Integer estoqueMinimo, Integer id, String marca, String modelo, String nome, Integer quantidade) {
+        this.categoria = categoria;
+        this.estoqueMinimo = estoqueMinimo;
         this.id = id;
-        this.nome = nome;
         this.marca = marca;
         this.modelo = modelo;
+        this.nome = nome;
         this.quantidade = quantidade;
-        this.estoqueMinimo = estoqueMinimo;
-        this.categoria_id = categoria_id;
-        this.categoria = categoria;
     }
 
     public Integer getId() {
@@ -103,14 +99,6 @@ public class Equipamento {
         this.estoqueMinimo = estoqueMinimo;
     }
 
-    public Integer getCategoria_id() {
-        return categoria_id;
-    }
-
-    public void setCategoria_id(Integer categoria_id) {
-        this.categoria_id = categoria_id;
-    }
-
     public Categoria getCategoria() {
         return categoria;
     }
@@ -119,4 +107,6 @@ public class Equipamento {
         this.categoria = categoria;
     }
 
+
+    
 }

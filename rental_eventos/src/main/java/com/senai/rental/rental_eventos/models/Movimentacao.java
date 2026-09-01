@@ -30,12 +30,7 @@ public class Movimentacao {
     @Column(name="quantidade")
     private Integer quantidade;
 
-     @Column(name="equipamento_id")
-    private Integer equipamento_id;
-    
-    @Column(name="usuario_id")
-    private Integer usuario_id;
-    
+
     
         @ManyToOne
         @JoinColumn(name = "equipamento_id", nullable = false)
@@ -45,85 +40,67 @@ public class Movimentacao {
         @JoinColumn(name = "usuario_id", nullable = false)
         private Usuario usuario;
 
-        public Movimentacao() {
-        }
+    public Movimentacao() {
+    }
 
-        public Movimentacao(Integer id, String tipo, LocalDate data, Integer quantidade, Integer equipamento_id,
-                Integer usuario_id, Equipamento equipamento, Usuario usuario) {
-            this.id = id;
-            this.tipo = tipo;
-            this.data = data;
-            this.quantidade = quantidade;
-            this.equipamento_id = equipamento_id;
-            this.usuario_id = usuario_id;
-            this.equipamento = equipamento;
-            this.usuario = usuario;
-        }
+    public Movimentacao(LocalDate data, Equipamento equipamento, Integer id, Integer quantidade, String tipo, Usuario usuario) {
+        this.data = data;
+        this.equipamento = equipamento;
+        this.id = id;
+        this.quantidade = quantidade;
+        this.tipo = tipo;
+        this.usuario = usuario;
+    }
 
-        public Integer getId() {
-            return id;
-        }
+    public Integer getId() {
+        return id;
+    }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-        public String getTipo() {
-            return tipo;
-        }
+    public String getTipo() {
+        return tipo;
+    }
 
-        public void setTipo(String tipo) {
-            this.tipo = tipo;
-        }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-        public LocalDate getData() {
-            return data;
-        }
+    public LocalDate getData() {
+        return data;
+    }
 
-        public void setData(LocalDate data) {
-            this.data = data;
-        }
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
 
-        public Integer getQuantidade() {
-            return quantidade;
-        }
+    public Integer getQuantidade() {
+        return quantidade;
+    }
 
-        public void setQuantidade(Integer quantidade) {
-            this.quantidade = quantidade;
-        }
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
 
-        public Integer getEquipamento_id() {
-            return equipamento_id;
-        }
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
 
-        public void setEquipamento_id(Integer equipamento_id) {
-            this.equipamento_id = equipamento_id;
-        }
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
 
-        public Integer getUsuario_id() {
-            return usuario_id;
-        }
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-        public void setUsuario_id(Integer usuario_id) {
-            this.usuario_id = usuario_id;
-        }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
-        public Equipamento getEquipamento() {
-            return equipamento;
-        }
-
-        public void setEquipamento(Equipamento equipamento) {
-            this.equipamento = equipamento;
-        }
-
-        public Usuario getUsuario() {
-            return usuario;
-        }
-
-        public void setUsuario(Usuario usuario) {
-            this.usuario = usuario;
-        }
-
+        
         
     
     

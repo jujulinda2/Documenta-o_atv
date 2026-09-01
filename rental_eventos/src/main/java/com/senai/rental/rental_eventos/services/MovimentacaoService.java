@@ -48,8 +48,8 @@ public class MovimentacaoService {
             movimentacaoRecuperada.setTipo(movimentacao.getTipo());
             movimentacaoRecuperada.setData(movimentacao.getData());
             movimentacaoRecuperada.setQuantidade(movimentacao.getQuantidade());
-            movimentacaoRecuperada.setEquipamento_id(movimentacao.getEquipamento_id());
-            movimentacaoRecuperada.setUsuario_id(movimentacao.getUsuario_id());
+            movimentacaoRecuperada.setEquipamento(movimentacao.getEquipamento());
+            movimentacaoRecuperada.setUsuario(movimentacao.getUsuario());
             movimentacaoRecuperada.setEquipamento(movimentacao.getEquipamento());
             movimentacaoRecuperada.setUsuario(movimentacao.getUsuario());
 

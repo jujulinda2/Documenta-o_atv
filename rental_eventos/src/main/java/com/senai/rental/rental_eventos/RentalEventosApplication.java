@@ -8,7 +8,7 @@ public class RentalEventosApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RentalEventosApplication.class, args);
-		System.out.println( "Felippe é insuportável");
+		System.out.println("Felippe é insuportável");
 	}
 
 
