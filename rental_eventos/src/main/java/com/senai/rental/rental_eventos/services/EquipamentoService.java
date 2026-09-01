@@ -1,5 +1,6 @@
 package com.senai.rental.rental_eventos.services;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,17 @@ public class EquipamentoService {
     }    
 
     public List<Equipamento> listarEquipamentos() {
-        return EquipamentoRepository.findAll();
-    }
+    List<Equipamento> equipamentos = EquipamentoRepository.findAll();
+
+    equipamentos.sort(
+        Comparator.comparing(
+            Equipamento::getNome,
+            String.CASE_INSENSITIVE_ORDER
+        )
+    );
+
+    return equipamentos;
+}
 
     public Boolean deletarEquipamento(Integer id) {
         if(EquipamentoRepository.existsById(id)) {
