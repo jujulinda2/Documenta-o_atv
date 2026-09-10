@@ -409,6 +409,8 @@ VALUES
 ('Periféricos'),
 ('Eletrônicos');
 
+quando for abrir o vs code, sempre verificar se ta abrindo a pasta mais interna
+
 
 <img width="1012" height="700" alt="Captura de tela 2026-08-06 113958" src="https://github.com/user-attachments/assets/1a44110e-8938-44db-8356-99168b356951" />
 
