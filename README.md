@@ -415,4 +415,4 @@ VALUES
 
 <img width="232" height="772" alt="Captura de tela 2026-08-27 085407" src="https://github.com/user-attachments/assets/8d9f53ab-ee30-4f69-951d-7238ead6aaff" />
 
-
+tincker client http://localhost:8080/nome da tabela/método-tabela
